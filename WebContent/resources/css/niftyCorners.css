@@ -1,0 +1,16 @@
+﻿.rtop,.rbottom{display:block}
+.rtop *,.rbottom *{display:block;height: 1px;overflow: hidden}
+.r1{margin: 0 5px}
+.r2{margin: 0 3px}
+.r3{margin: 0 2px}
+.r4{margin: 0 1px;height: 2px}
+
+.rs1{margin: 0 2px}
+.rs2{margin: 0 1px}
+#content #maincontent #tabContaier .tabDetails #tab3 p a {
+	color: #000;
+}
+#wrapper #content #linkcontent #corpt1 table tr td img {
+	border: 2px solid #927a1a;
+}
+

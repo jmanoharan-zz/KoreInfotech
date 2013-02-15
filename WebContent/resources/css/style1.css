@@ -1,0 +1,33 @@
+﻿.middle_bottom
+{
+	width:345px;
+	float:left;
+	background:url(../images/mid_bot_bg.jpg) repeat-x left top;
+	padding:0 12px 0 12px;
+	position:absolute;
+	top: 294px;
+	left: 16px;
+}
+.middle_bottom_wrap
+{
+	width:978px;
+	margin: 0 auto;
+}
+
+.mid_bot_right
+{
+	width:300px;
+	float:right;
+	padding:0 0px 0 5px;
+}
+.mid_bot_right h3
+{
+	width:auto;
+	float:left;
+	border-top:1px solid #797778;
+	padding:7px 60px 5px 0;
+	font-size:14px;
+	color:#384b59;
+	margin:0 0 0 0px;
+	font-weight:normal;
+}

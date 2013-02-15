@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<distributable />
+	<display-name>KoreInfoPortalWeb</display-name>
+	<welcome-file-list>
+		<welcome-file>/views/login/login.jsp</welcome-file>
+	</welcome-file-list>
+	<jsp-config>
+		<taglib>
+			<taglib-uri>http://www.opensymphony.com/sitemesh/decorator</taglib-uri>
+			<taglib-location>/WEB-INF/tld/sitemesh-decorator.tld</taglib-location>
+		</taglib>
+
+		<taglib>
+			<taglib-uri>http://www.opensymphony.com/sitemesh/page</taglib-uri>
+			<taglib-location>/WEB-INF/tld/sitemesh-page.tld</taglib-location>
+		</taglib>
+		
+		<taglib>
+			<taglib-uri>http://www.springframework.org/tags/form</taglib-uri>
+			<taglib-location>/WEB-INF/tld/spring-form.tld</taglib-location>
+		</taglib>
+		
+		<taglib>
+			<taglib-uri>http://www.springframework.org/tags</taglib-uri>
+			<taglib-location>/WEB-INF/tld/spring.tld</taglib-location>
+		</taglib>
+		
+	</jsp-config>
+
+	<servlet>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/mvc-dispatcher-servlet.xml,
+			/WEB-INF/spring-security.xml</param-value>
+	</context-param>
+
+	<!-- Spring Security -->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+
+</web-app>
